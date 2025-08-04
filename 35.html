@@ -1,0 +1,176 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/book.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/qrcode.js"></script>
+
+
+</head>
+<title>EPO10 | คำสั่งที่ ๓๕/๒๕๖๘</title>
+<body>
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Green Office</h1>
+                <h6>EPO10-35-2568</h6>
+            </header>
+            <article>
+
+<!--h2 class="chapter-title"></h2-->
+<center>
+<img src="krut.jpg" width="100px"></img><br><br>
+<strong>คำสั่งสำนักงานสิ่งแวดล้อมและควบคุมมลพิษที่ ๑๐ (ขอนแก่น)<br>ที่</strong>
+ ๓๕<strong>
+/๒๕๖๘<br>เรื่อง &nbsp;การตรวจสอบสถานที่กำจัดมูลฝอยของราชการส่วนท้องถิ่น</strong>
+<br><br>
+---------------------------
+<br><br>
+</center>
+<p>
+
+เพื่อให้การควบคุมมลพิษจากแหล่งกำเนิดมลพิษประเภทสถานที่กำจัดมูลฝอยของราชการส่วนท้องถิ่นในพื้นที่รับผิดชอบของสำนักงานสิ่งแวดล้อมและควบคุมมลพิษที่ ๑๐ (ขอนแก่น) เป็นไปอย่างมีประสิทธิภาพ  
+</p>
+<p>อาศัยอำนาจตามความในมาตรา ๓๓ วรรคสอง แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๕ และที่แก้ไขเพิ่มเติม ประกอบกับคำสั่งกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม ที่ ๒๐๔/๒๕๖๘ ลงวันที่ ๑๗ มิถุนายน พ.ศ. ๒๕๖๘ จึงให้เจ้าพนักงานควบคุมมลพิษในสังกัด ใช้แนวทางการการตรวจสอบสถานที่กำจัดมูลฝอยของราชการส่วนท้องถิ่น ตาม<a href="https://kietpawpan.github.io/EPO10/EPO10-680804.pdf">เอกสารแนบ</a> หรือตาม QR Code ท้ายคำสั่งนี้
+ เพื่อเป็นกรอบในการปฏิบัติงานตามอำนาจหน้าที่ของเจ้าพนักงานควบคุมมลพิษในส่วนที่เกี่ยวข้อง ให้เป็นไปอย่างมีประสิทธิภาพ ถูกต้องตามกฎหมาย เป็นประโยชน์ต่อราชการและประชาชนในพื้นที่สืบไป 
+</p><br>
+
+<p>ทั้งนี้ ตั้งแต่บัดนี้เป็นต้นไป </p>
+<p><br><center>สั่ง &nbsp;&nbsp; ณ &nbsp;&nbsp; วันที่ &nbsp;๔&nbsp; สิงหาคม พ.ศ. ๒๕๖๘<br>
+<img src="signMonte.png" width="70%"></img><br>
+(นายมนตรี เกียรติเผ่าพันธ์)<br>
+ผู้อำนวยการสำนักงานสิ่งแวดล้อมและควบคุมมลพิษที่ ๑๐</center>
+
+</p><br>
+
+
+<header>     
+<img src="QR6835.png" width="60px" style="margin-bottom:5px;"></img><br>
+<font size="-1">เอกสารแนบ</font>
+</header>
+</p>
+
+<br><br>
+<dd>
+
+
+<div id='qr'></div>
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 150,
+	height : 150,
+              });
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		alert("Input a text");
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+
+}
+
+makeCode();
+
+$("#text").
+	on("blur", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
+
+
+const qrcodeEl = document.querySelector('#qrcode');
+const textEl = document.querySelector('#text');
+const generateEl = document.querySelector('#generate');
+const widthEl = document.querySelector('#width');
+const heightEl = document.querySelector('#height');
+const darkEl = document.querySelector('#dark');
+const lightEl = document.querySelector('#light');
+const downloadEl = document.querySelector('#download');
+
+generateEl.addEventListener('click', generate);
+
+function generate() {
+  qrcodeEl.innerHTML = ``;
+  new QRCode(qrcodeEl, {
+    text: textEl.value,
+    width: widthEl.value,
+    height: heightEl.value,
+    colorDark: darkEl.value,
+    colorLight: lightEl.value, 
+  });
+
+  download();
+}
+
+function download() {
+  const canvasEl = qrcodeEl.querySelector('canvas');
+  let data = canvasEl.toDataURL('image/png');
+
+  downloadEl.setAttribute('href', data);
+  downloadEl.setAttribute('download', 'qrcode.png');
+  downloadEl.style.display = 'inline-block';
+}
+
+
+</script>
+
+
+</body>
+<!--
+<dd>
+<h3>MIT License</h3>
+Copyright (c) 2023 by Walter Nascimento Barroso <p>(https://codepen.io/WalterNascimento/pen/zYNPNLe)</p>
+Copyright (c) 2023 by Erin E. Sullivan <p>(https://codepen.io/erinesullivan/pen/gxdbzp)</p>
+Copyright (c) 2023 Montri Kiatphaophan ('jTech')<p>(https://kietpawpan.github.io/QRCode)</p><br>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:<br><br>
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.<br><br>
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</p>
+<br>
+<center>
+<hr width='35%'>
+</center>
+</dd>
+-->
+</html>
